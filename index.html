@@ -3,104 +3,140 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Undangan Tahlilan 100 Hari</title>
+<title>Undangan Tahlilan</title>
+
 <style>
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', sans-serif;
-        background: #f5f5f5;
-        color: #333;
-        text-align: center;
-    }
-    .container {
-        max-width: 600px;
-        margin: auto;
-        background: white;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .header {
-        font-size: 28px;
-        font-weight: bold;
-        color: #1f3c5b;
-    }
-    .title {
-        font-size: 22px;
-        margin-top: 10px;
-        color: #b08d57;
-    }
-    .name {
-        font-size: 26px;
-        font-weight: bold;
-        margin: 15px 0;
-    }
-    .info {
-        margin: 15px 0;
-        line-height: 1.6;
-    }
-    .card {
-        background: #f9f9f9;
-        padding: 15px;
-        border-radius: 10px;
-        margin: 15px 0;
-    }
-    .footer {
-        margin-top: 20px;
-        font-size: 14px;
-    }
-    .btn {
-        display: inline-block;
-        margin-top: 15px;
-        padding: 10px 20px;
-        background: #1f3c5b;
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-    }
+body {
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(#0f2027, #203a43, #2c5364);
+    color:white;
+    text-align:center;
+}
+
+/* COVER */
+#cover {
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#0f2027;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:999;
+}
+
+#cover button {
+    padding:12px 25px;
+    border:none;
+    background:gold;
+    color:black;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* KONTEN */
+.container {
+    padding:20px;
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s;
+}
+
+.show {
+    opacity:1;
+    transform:translateY(0);
+}
+
+h1 {
+    color:gold;
+}
+
+.card {
+    background:rgba(255,255,255,0.1);
+    padding:15px;
+    border-radius:12px;
+    margin:20px 0;
+}
+
+/* animasi fade */
+.fade {
+    animation:fadeIn 2s ease forwards;
+}
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
 </style>
 </head>
+
 <body>
 
-<div class="container">
-    <div class="header">Undangan</div>
-    <div class="title">Pembacaan Do’a Tahlilan 100 Hari</div>
+<!-- COVER -->
+<div id="cover">
+    <h2>Undangan Tahlilan</h2>
+    <p>Kepada Bapak/Ibu/Sdr(i)</p>
+    <button onclick="bukaUndangan()">Buka Undangan</button>
+</div>
 
-    <p><i>Bismillahirrahmanirrahim</i></p>
-    <p>Assalamu’alaikum War. Wab</p>
+<!-- AUDIO -->
+<audio id="musik" loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_6c9b2d6c6d.mp3" type="audio/mp3">
+</audio>
 
-    <div class="info">
+<!-- KONTEN -->
+<div id="content" class="container">
+
+    <h1 class="fade">Tahlilan 100 Hari</h1>
+
+    <p class="fade"><i>Bismillahirrahmanirrahim</i></p>
+
+    <p class="fade">
+        Assalamu’alaikum War. Wab<br><br>
         Dengan memanjatkan puji syukur kehadirat Allah SWT,
-        kami mengundang Bapak/Ibu/Sdr(i) untuk menghadiri acara
-        <b>Pembacaan Do’a Tahlil 100 Hari</b> atas berpulangnya:
+        kami mengundang Bapak/Ibu/Sdr(i) untuk menghadiri:
+    </p>
+
+    <h2 class="fade">MASRIA SAIDDE</h2>
+
+    <div class="card fade">
+        <p><b>Hari:</b> Jum’at, 24 April 2026</p>
+        <p><b>Waktu:</b> 11.00 WITA - Selesai</p>
+        <p><b>Tempat:</b><br>Jl. Trans Sulawesi<br>Kelurahan Kampal</p>
     </div>
 
-    <div class="name">MASRIA SAIDDE</div>
+    <p class="fade">
+        Merupakan kehormatan bagi kami atas kehadiran dan doa Bapak/Ibu.
+    </p>
 
-    <div class="card">
-        <p><b>Hari/Tanggal:</b><br> Jum’at, 24 April 2026</p>
-        <p><b>Waktu:</b><br> 11.00 WITA – Selesai</p>
-        <p><b>Tempat:</b><br> Jl. Trans Sulawesi<br>Kelurahan Kampal</p>
-    </div>
+    <p class="fade">
+        Wassalamu’alaikum War. Wab
+    </p>
 
-    <div class="info">
-        Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu/Sdr(i)
-        berkenan hadir dan mendoakan almarhumah.
-    </div>
+    <hr style="opacity:0.3">
 
-    <div class="info">
-        <b>Kami yang mengundang:</b><br><br>
+    <p class="fade"><b>Kami yang mengundang:</b></p>
+    <p class="fade">
         H. Muh Ishak H, SS, M.Si & Hj. Rismawati<br>
         Zainal & Karmila<br>
         Mohammad Arief Idris
-    </div>
+    </p>
 
-    <a class="btn" href="https://maps.google.com" target="_blank">Lihat Lokasi</a>
-
-    <div class="footer">
-        Wassalamu’alaikum War. Wab
-    </div>
 </div>
+
+<script>
+function bukaUndangan(){
+    document.getElementById("cover").style.display = "none";
+
+    let content = document.getElementById("content");
+    content.classList.add("show");
+
+    let musik = document.getElementById("musik");
+    musik.play();
+}
+</script>
 
 </body>
 </html>
